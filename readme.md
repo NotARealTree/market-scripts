@@ -12,3 +12,7 @@ It is seperate in order to allow changing of other system components while keepi
 ## License
 
 This project is MIT Licensed, the license can be found [here](LICENSE)
+
+## Commands
+
+hoover `forever hoover.js -l forever.log -o hoover.log -e hoover_err.log --minUptime 10000`

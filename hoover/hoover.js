@@ -15,7 +15,6 @@ MongoClient.connect(url, function(err, db) {
 
     setInterval(function(){
         request('http://redisq.zkillboard.com/listen.php', (err, res, body) => {
-            console.log(body);
             if(body != null){
                 var json = JSON.parse(body);
                 if(json.package != null){
