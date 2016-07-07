@@ -13,16 +13,17 @@ var url = 'mongodb://localhost:27017/tyche';
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
 
-    fs.readFile( __dirname + '../resources/invTypes.csv', function (err, data) {
+    fs.readFile( __dirname + '/../resources/invTypes.csv', 'utf8', function (err, data) {
         if (err) {
             throw err;
         }
 
         var objects = [];
+        console.log(data);
 
         var lines = data.split('\n');
         lines.forEach(line => {
-            var splits = line.split(',');
+            var splits = line.replace('\r', '').split(',');
             objects.push({
                 typeId: splits[0],
                 groupId: splits[1],
@@ -31,6 +32,7 @@ MongoClient.connect(url, function(err, db) {
         });
 
         var items = db.collection('items');
+        items.drop();
         items.insertMany(objects);
     });
 });

@@ -11,24 +11,34 @@ var url = config.mongo.url;
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
 
-    var collection = db.collection('killmails');
+    var items = {};
+    var itemCollection = db.collection('items');
+    itemCollection.find({}).toArray((err, res) => {
+        res.forEach(function(item){
+            items[item.typeId] = item;
+        });
+        hooverKills(db, items);
+    });
+});
 
+function hooverKills(db, items){
+    var collection = db.collection('killmails');
     setInterval(function(){
         request('http://redisq.zkillboard.com/listen.php', (err, res, body) => {
             if(body != null){
                 var json = JSON.parse(body);
                 if(json.package != null){
                     var killmail = json.package.killmail;
-
                     killmail = parseKillMail(killmail);
-
+                    killmail.victim.items.forEach(item => {
+                        item.groupId = items[item.itemType.id].groupId;
+                    });
                     collection.insert(killmail);
                 }
             }
         });
     }, 1000);
-
-});
+}
 
 function parseKillMail(killmail){
     killmail.killTime = new Date(killmail.killTime).getTime();
