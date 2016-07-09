@@ -1,0 +1,832 @@
+0,#System,#System
+1,Character,Owner
+2,Corporation,Owner
+3,Region,Celestial
+4,Constellation,Celestial
+5,Solar System,Celestial
+6,Sun,Celestial
+7,Planet,Celestial
+8,Moon,Celestial
+9,Asteroid Belt,Celestial
+10,Stargate,Celestial
+11,Asteroid OLD,Celestial
+12,Cargo Container,Celestial
+13,Ring,Celestial
+14,Biomass,Celestial
+15,Station,Station
+16,Station Services,Station
+17,Money,Material
+18,Mineral,Material
+19,Faction,Owner
+20,Drug,Material
+23,Clone,Accessories
+24,Voucher,Accessories
+25,Frigate,Ship
+26,Cruiser,Ship
+27,Battleship,Ship
+28,Industrial,Ship
+29,Capsule,Ship
+30,Titan,Ship
+31,Shuttle,Ship
+32,Alliance,Owner
+38,Shield Extender,Module
+39,Shield Recharger,Module
+40,Shield Booster,Module
+41,Shield Transporter,Module
+43,Capacitor Recharger,Module
+46,Afterburner,Module
+47,Cargo Scanner,Module
+48,Ship Scanner,Module
+49,Survey Scanner,Module
+52,Warp Scrambler,Module
+53,Energy Weapon,Module
+54,Mining Laser,Module
+55,Projectile Weapon,Module
+56,Missile Launcher,Module
+57,Shield Power Relay,Module
+59,Gyrostabilizer,Module
+60,Damage Control,Module
+61,Capacitor Battery,Module
+62,Armor Repair Unit,Module
+63,Hull Repair Unit,Module
+65,Stasis Web,Module
+67,Energy Transfer Array,Module
+68,Energy Vampire,Module
+71,Energy Destabilizer,Module
+72,Smart Bomb,Module
+74,Hybrid Weapon,Module
+76,Capacitor Booster,Module
+77,Shield Hardener,Module
+78,Reinforced Bulkhead,Module
+80,ECM Burst,Module
+82,Passive Targeting System,Module
+83,Projectile Ammo,Charge
+84,Missile,Charge
+85,Hybrid Ammo,Charge
+86,Frequency Crystal,Charge
+87,Capacitor Booster Charge,Charge
+88,Defender Missile,Charge
+89,Torpedo,Charge
+90,Bomb,Charge
+92,Mine,Charge
+94,Trading,Trading
+95,Trade Session,Trading
+96,Automated Targeting System,Module
+97,Proximity Drone,Drone
+98,Armor Coating,Module
+99,Sentry Gun,Entity
+100,Combat Drone,Drone
+101,Mining Drone,Drone
+104,Clone Blueprint,Blueprint
+105,Frigate Blueprint,Blueprint
+106,Cruiser Blueprint,Blueprint
+107,Battleship Blueprint,Blueprint
+108,Industrial Blueprint,Blueprint
+109,Capsule Blueprint,Blueprint
+110,Titan Blueprint,Blueprint
+111,Shuttle Blueprint,Blueprint
+118,Shield Extender Blueprint,Blueprint
+119,Shield Recharger Blueprint,Blueprint
+120,Shield Booster Blueprint,Blueprint
+121,Shield Transporter Blueprint,Blueprint
+123,Capacitor Recharger Blueprint,Blueprint
+126,Afterburner Blueprint,Blueprint
+127,Cargo Scanner Blueprint,Blueprint
+128,Ship Scanner Blueprint,Blueprint
+129,Survey Scanner Blueprint,Blueprint
+130,ECM Blueprint,Blueprint
+131,ECCM Blueprint,Blueprint
+132,Warp Scrambler Blueprint,Blueprint
+133,Energy Weapon Blueprint,Blueprint
+134,Mining Laser Blueprint,Blueprint
+135,Projectile Weapon Blueprint,Blueprint
+136,Missile Launcher Blueprint,Blueprint
+137,Power Manager Blueprint,Blueprint
+139,Fast Loader Blueprint,Blueprint
+140,Damage Control Blueprint,Blueprint
+141,Capacitor Battery Blueprint,Blueprint
+142,Armor Repair Unit Blueprint,Blueprint
+143,Hull Repair Unit Blueprint,Blueprint
+145,Stasis Web Blueprint,Blueprint
+147,Energy Transfer Array Blueprint,Blueprint
+148,Energy Vampire Blueprint,Blueprint
+151,Energy Destabilizer Blueprint,Blueprint
+152,Smart Bomb Blueprint,Blueprint
+154,Hybrid Weapon Blueprint,Blueprint
+156,Capacitor Booster Blueprint,Blueprint
+157,Shield Hardener Blueprint,Blueprint
+158,Hull Mods Blueprint,Blueprint
+160,ECM Burst Blueprint,Blueprint
+161,Passive Targeting System Blueprint,Blueprint
+162,Automated Targeting System Blueprint,Blueprint
+163,Armor Coating Blueprint,Blueprint
+165,Projectile Ammo Blueprint,Blueprint
+166,Missile Blueprint,Blueprint
+167,Hybrid Ammo Blueprint,Blueprint
+168,Frequency Crystal Blueprint,Blueprint
+169,Capacitor Booster Charge Blueprint,Blueprint
+170,Defender Missile Blueprint,Blueprint
+172,Bomb Blueprint,Blueprint
+174,Mine Blueprint,Blueprint
+175,Proximity Drone Blueprint,Blueprint
+176,Combat Drone Blueprint,Blueprint
+177,Mining Drone Blueprint,Blueprint
+178,Drug Blueprint,Blueprint
+180,Protective Sentry Gun,Entity
+182,Police Drone,Entity
+185,Pirate Drone,Entity
+186,Wreck,Celestial
+190,Bloodline Bonus,Bonus
+191,Physical Benefit,Bonus
+192,Physical Handicap,Bonus
+193,Phobia Handicap,Bonus
+194,Social Handicap,Bonus
+195,Amarr Education,Bonus
+196,Caldari Education,Bonus
+197,Gallente Education,Bonus
+198,Minmatar Education,Bonus
+199,Career Bonus,Bonus
+201,ECM,Module
+202,ECCM,Module
+203,Sensor Backup Array,Module
+205,Heat Sink,Module
+208,Remote Sensor Damper,Module
+209,Tracking Link,Module
+210,Signal Amplifier,Module
+211,Tracking Enhancer,Module
+212,Sensor Booster,Module
+213,Tracking Computer,Module
+218,Heat Sink Blueprint,Blueprint
+223,Sensor Booster Blueprint,Blueprint
+224,Tracking Computer Blueprint,Blueprint
+225,Cheat Module Group,Module
+226,Large Collidable Object,Celestial
+227,Cloud,Celestial
+237,Rookie ship,Ship
+255,Gunnery,Skill
+256,Missile Launcher Operation,Skill
+257,Spaceship Command,Skill
+258,Leadership,Skill
+266,Corporation Management,Skill
+267,Obsolete Books,Commodity
+268,Industry,Skill
+269,Mechanic,Skill
+270,Science,Skill
+271,Engineering,Skill
+272,Electronics,Skill
+273,Drones,Skill
+274,Trade,Skill
+275,Navigation,Skill
+278,Social,Skill
+279,LCO Drone,Entity
+280,General,Commodity
+281,Frozen,Commodity
+282,Radioactive,Commodity
+283,Livestock,Commodity
+284,Biohazard,Commodity
+285,CPU Enhancer,Module
+286,Tutorial Drone,Entity
+287,Rogue Drone,Entity
+288,Faction Drone,Entity
+289,Projected ECCM,Module
+290,Remote Sensor Booster,Module
+291,Tracking Disruptor,Module
+295,Shield Amplifier,Module
+296,Shield Amplifier Blueprint,Blueprint
+297,Convoy,Entity
+298,Convoy Drone,Entity
+299,Repair Drone,Drone
+300,Cyberimplant,Implant
+301,Concord Drone,Entity
+302,Magnetic Field Stabilizer,Module
+303,Booster,Implant
+304,DNA Mutator,Implant
+305,Comet,Celestial
+306,Spawn Container,Entity
+307,Construction Platform,Celestial
+308,Countermeasure Launcher,Module
+309,Autopilot,Module
+310,Beacon,Celestial
+311,Refining Array,Structure
+312,Planetary Cloud,Celestial
+313,Drugs,Commodity
+314,Miscellaneous,Commodity
+315,Warp Core Stabilizer,Module
+316,Gang Coordinator,Module
+317,Computer Interface Node,Module
+318,Landmark,Celestial
+319,Large Collidable Structure,Entity
+321,Shield Disruptor,Module
+323,Billboard,Entity
+324,Assault Ship,Ship
+325,Armor Repair Projector,Module
+326,Armor Plating Energized,Module
+328,Armor Hardener,Module
+329,Armor Reinforcer,Module
+330,Cloaking Device,Module
+332,Tool,Commodity
+333,Datacores,Commodity
+334,Construction Components,Commodity
+335,Temporary Cloud,Entity
+336,Mobile Sentry Gun,Celestial
+337,Mission Drone,Entity
+338,Shield Boost Amplifier,Module
+339,Auxiliary Power Core,Module
+340,Secure Cargo Container,Celestial
+341,Signature Scrambling,Module
+342,Anti Warp Scrambler Blueprint,Blueprint
+343,Tracking Disruptor Blueprint,Blueprint
+344,Tracking Enhancer Blueprint,Blueprint
+345,Tracking Link Blueprint,Blueprint
+346,Co-Processor Blueprint,Blueprint
+347,Signal Amplifier Blueprint,Blueprint
+348,Armor Hardener Blueprint,Blueprint
+349,Armor Reinforcer Blueprint,Blueprint
+350,Armor Repair Projector Blueprint,Blueprint
+352,Auxiliary Power Core Blueprint,Blueprint
+353,GM Modules,Module
+355,Refinables,Commodity
+356,Tool Blueprint,Blueprint
+357,DroneBayExpander,Module
+358,Heavy Assault Ship,Ship
+360,Shield Boost Amplifier Blueprint,Blueprint
+361,Mobile Warp Disruptor,Deployable
+363,Ship Maintenance Array,Structure
+364,Mobile Storage,Structure
+365,Control Tower,Structure
+366,Warp Gate,Celestial
+367,Ballistic Control system,Module
+368,Global Warp Disruptor,Celestial
+369,Ship Logs,Commodity
+370,Criminal Tags,Commodity
+371,Mobile Warp Disruptor Blueprint,Blueprint
+372,Advanced Autocannon Ammo,Charge
+373,Advanced Railgun Ammo,Charge
+374,Advanced Beam Laser Crystal,Charge
+375,Advanced Pulse Laser Crystal,Charge
+376,Advanced Artillery Ammo,Charge
+377,Advanced Blaster Ammo,Charge
+378,Cruise Control,Module
+379,Target Painter,Module
+380,Transport Ship,Ship
+381,Elite Battleship,Ship
+382,Shipping Crates,Celestial
+383,Destructible Sentry Gun,Entity
+384,Light Missile,Charge
+385,Heavy Missile,Charge
+386,Cruise Missile,Charge
+387,Rocket,Charge
+394,FoF Light Missile,Charge
+395,FoF Heavy Missile,Charge
+396,FoF Cruise Missile,Charge
+397,Assembly Array,Structure
+400,Ballistic Control System Blueprint,Blueprint
+401,Cloaking Device Blueprint,Blueprint
+404,Silo,Structure
+405,Anti Cloaking Pulse,Module
+406,Smartbomb Supercharger,Module
+407,Drone Control Unit,Module
+408,Drone Control Unit Blueprint,Blueprint
+409,Empire Insignia Drops,Commodity
+410,Anti Cloaking Pulse Blueprint,Blueprint
+411,Force Field,Celestial
+413,Mobile Laboratory,Structure
+414,Mobile Power Core,Structure
+416,Moon Mining,Structure
+417,Mobile Missile Sentry,Structure
+418,Mobile Shield Generator,Structure
+419,Battlecruiser,Ship
+420,Destroyer,Ship
+422,Gas Isotopes,Material
+423,Ice Product,Material
+425,Orbital Assault Unit,Charge
+426,Mobile Projectile Sentry,Structure
+427,Moon Materials,Material
+428,Intermediate Materials,Material
+429,Composite,Material
+430,Mobile Laser Sentry,Structure
+435,Deadspace Overseer,Entity
+436,Simple Reaction,Reaction
+438,Mobile Reactor,Structure
+439,Electronic Warfare Battery,Structure
+440,Sensor Dampening Battery,Structure
+441,Stasis Webification Battery,Structure
+443,Warp Scrambling Battery,Structure
+444,Shield Hardening Array,Structure
+445,Force Field Array,Structure
+446,Customs Official,Entity
+447,Construction Component Blueprints,Blueprint
+448,Audit Log Secure Container,Celestial
+449,Mobile Hybrid Sentry,Structure
+450,Arkonor,Asteroid
+451,Bistot,Asteroid
+452,Crokite,Asteroid
+453,Dark Ochre,Asteroid
+454,Hedbergite,Asteroid
+455,Hemorphite,Asteroid
+456,Jaspet,Asteroid
+457,Kernite,Asteroid
+458,Plagioclase,Asteroid
+459,Pyroxeres,Asteroid
+460,Scordite,Asteroid
+461,Spodumain,Asteroid
+462,Veldspar,Asteroid
+463,Mining Barge,Ship
+464,Strip Miner,Module
+465,Ice,Asteroid
+467,Gneiss,Asteroid
+468,Mercoxit,Asteroid
+469,Omber,Asteroid
+470,Unanchoring Drone,Drone
+471,Corporate Hangar Array,Structure
+472,System Scanner,Module
+473,Tracking Array,Structure
+474,Acceleration Gate Keys,Commodity
+475,Microwarpdrive,Module
+476,Citadel Torpedo,Charge
+477,Mining Barge Blueprint,Blueprint
+478,System Scanner Blueprint,Blueprint
+479,Scanner Probe,Charge
+480,Stealth Emitter Array,Structure
+481,Scan Probe Launcher,Module
+482,Mining Crystal,Charge
+483,Frequency Mining Laser,Module
+484,Complex Reactions,Reaction
+485,Dreadnought,Ship
+486,Scan Probe Blueprint,Blueprint
+487,Destroyer Blueprint,Blueprint
+489,Battlecruiser Blueprint,Blueprint
+490,Strip Miner Blueprint,Blueprint
+492,Survey Probe,Charge
+493,Overseer Personal Effects,Commodity
+494,Deadspace Overseer's Structure,Entity
+495,Deadspace Overseer's Sentry,Entity
+496,Deadspace Overseer's Belongings,Entity
+497,Fuel,Charge
+498,Modifications,Charge
+499,New EW Testing,Module
+500,Snowballs,Charge
+501,Missile Launcher Snowball,Module
+502,Cosmic Signature,Celestial
+503,Elite Industrial Blueprint,Blueprint
+504,Target Painter Blueprint,Blueprint
+505,Fake Skills,Skill
+506,Missile Launcher Cruise,Module
+507,Missile Launcher Rocket,Module
+508,Missile Launcher Siege,Module
+509,Missile Launcher Standard,Module
+510,Missile Launcher Heavy,Module
+511,Missile Launcher Assault,Module
+512,Missile Launcher Defender,Module
+513,Freighter,Ship
+514,ECM Stabilizer,Module
+515,Siege Module,Module
+516,Siege Module Blueprint,Blueprint
+517,Agents in Space,Celestial
+518,Anti Ballistic Defense System,Module
+519,Terran Artifacts,Asteroid
+520,Storyline Frigate,Entity
+521,Identification,Commodity
+522,Storyline Cruiser,Entity
+523,Storyline Battleship,Entity
+524,Missile Launcher Citadel,Module
+525,Freighter Blueprint,Blueprint
+526,Commodities,Commodity
+527,Storyline Mission Frigate,Entity
+528,Artifacts and Prototypes,Commodity
+530,Materials and Compounds,Commodity
+532,Gang Coordinator Blueprint,Blueprint
+533,Storyline Mission Cruiser,Entity
+534,Storyline Mission Battleship,Entity
+535,Construction Platform Blueprint,Blueprint
+536,Station Components,Commodity
+537,Dreadnought Blueprint,Blueprint
+538,Data Miners,Module
+540,Command Ship,Ship
+541,Interdictor,Ship
+543,Exhumer,Ship
+544,Cap Drain Drone,Drone
+545,Warp Scrambling Drone,Drone
+546,Mining Upgrade,Module
+547,Carrier,Ship
+548,Warp Disruption Probe,Charge
+549,Fighter Drone,Drone
+550,Asteroid Angel Cartel Frigate,Entity
+551,Asteroid Angel Cartel Cruiser,Entity
+552,Asteroid Angel Cartel Battleship,Entity
+553,Asteroid Angel Cartel Officer,Entity
+554,Asteroid Angel Cartel Hauler,Entity
+555,Asteroid Blood Raiders Cruiser,Entity
+556,Asteroid Blood Raiders Battleship,Entity
+557,Asteroid Blood Raiders Frigate,Entity
+558,Asteroid Blood Raiders Hauler,Entity
+559,Asteroid Blood Raiders Officer,Entity
+560,Asteroid Guristas Battleship,Entity
+561,Asteroid Guristas Cruiser,Entity
+562,Asteroid Guristas Frigate,Entity
+563,Asteroid Guristas Hauler,Entity
+564,Asteroid Guristas Officer,Entity
+565,Asteroid Sansha's Nation Battleship,Entity
+566,Asteroid Sansha's Nation Cruiser,Entity
+567,Asteroid Sansha's Nation Frigate,Entity
+568,Asteroid Sansha's Nation Hauler,Entity
+569,Asteroid Sansha's Nation Officer,Entity
+570,Asteroid Serpentis Battleship,Entity
+571,Asteroid Serpentis Cruiser,Entity
+572,Asteroid Serpentis Frigate,Entity
+573,Asteroid Serpentis Hauler,Entity
+574,Asteroid Serpentis Officer,Entity
+575,Asteroid Angel Cartel Destroyer,Entity
+576,Asteroid Angel Cartel BattleCruiser,Entity
+577,Asteroid Blood Raiders Destroyer,Entity
+578,Asteroid Blood Raiders BattleCruiser,Entity
+579,Asteroid Guristas Destroyer,Entity
+580,Asteroid Guristas BattleCruiser,Entity
+581,Asteroid Sansha's Nation Destroyer,Entity
+582,Asteroid Sansha's Nation BattleCruiser,Entity
+583,Asteroid Serpentis Destroyer,Entity
+584,Asteroid Serpentis BattleCruiser,Entity
+585,Remote Hull Repairer,Module
+586,Drone Modules,Module
+588,Super Weapon,Module
+589,Interdiction Sphere Launcher,Module
+590,Jump Portal Generator,Module
+593,Deadspace Angel Cartel BattleCruiser,Entity
+594,Deadspace Angel Cartel Battleship,Entity
+595,Deadspace Angel Cartel Cruiser,Entity
+596,Deadspace Angel Cartel Destroyer,Entity
+597,Deadspace Angel Cartel Frigate,Entity
+602,Deadspace Blood Raiders BattleCruiser,Entity
+603,Deadspace Blood Raiders Battleship,Entity
+604,Deadspace Blood Raiders Cruiser,Entity
+605,Deadspace Blood Raiders Destroyer,Entity
+606,Deadspace Blood Raiders Frigate,Entity
+611,Deadspace Guristas BattleCruiser,Entity
+612,Deadspace Guristas Battleship,Entity
+613,Deadspace Guristas Cruiser,Entity
+614,Deadspace Guristas Destroyer,Entity
+615,Deadspace Guristas Frigate,Entity
+620,Deadspace Sansha's Nation BattleCruiser,Entity
+621,Deadspace Sansha's Nation Battleship,Entity
+622,Deadspace Sansha's Nation Cruiser,Entity
+623,Deadspace Sansha's Nation Destroyer,Entity
+624,Deadspace Sansha's Nation Frigate,Entity
+629,Deadspace Serpentis BattleCruiser,Entity
+630,Deadspace Serpentis Battleship,Entity
+631,Deadspace Serpentis Cruiser,Entity
+632,Deadspace Serpentis Destroyer,Entity
+633,Deadspace Serpentis Frigate,Entity
+638,Navigation Computer,Module
+639,Electronic Warfare Drone,Drone
+640,Logistic Drone,Drone
+641,Stasis Webifying Drone,Drone
+642,Super Gang Enhancer,Module
+643,Carrier Blueprint,Blueprint
+644,Drone Navigation Computer,Module
+645,Drone Damage Modules,Module
+646,Drone Tracking Modules,Module
+647,Drone Control Range Module,Module
+648,Advanced Rocket,Charge
+649,Freight Container,Celestial
+650,Tractor Beam,Module
+651,Super Weapon Blueprint,Blueprint
+652,Lease,Commodity
+653,Advanced Light Missile,Charge
+654,Advanced Assault Missile,Charge
+655,Advanced Heavy Missile,Charge
+656,Advanced Cruise Missile,Charge
+657,Advanced Torpedo,Charge
+658,Cynosural Field,Module
+659,Supercarrier,Ship
+660,Energy Vampire Slayer,Module
+661,Simple Biochemical Reactions,Reaction
+662,Complex Biochemical Reactions,Reaction
+663,Mercoxit Mining Crystal,Charge
+665,Mission Amarr Empire Frigate,Entity
+666,Mission Amarr Empire Battlecruiser,Entity
+667,Mission Amarr Empire Battleship,Entity
+668,Mission Amarr Empire Cruiser,Entity
+669,Mission Amarr Empire Destroyer,Entity
+670,Mission Amarr Empire Other,Entity
+671,Mission Caldari State Frigate,Entity
+672,Mission Caldari State Battlecruiser,Entity
+673,Mission Caldari State Cruiser,Entity
+674,Mission Caldari State Battleship,Entity
+675,Mission Caldari State Other,Entity
+676,Mission Caldari State Destroyer,Entity
+677,Mission Gallente Federation Frigate,Entity
+678,Mission Gallente Federation Cruiser,Entity
+679,Mission Gallente Federation Destroyer,Entity
+680,Mission Gallente Federation Battleship,Entity
+681,Mission Gallente Federation Battlecruiser,Entity
+682,Mission Gallente Federation Other,Entity
+683,Mission Minmatar Republic Frigate,Entity
+684,Mission Minmatar Republic Destroyer,Entity
+685,Mission Minmatar Republic Battlecruiser,Entity
+686,Mission Minmatar Republic Other,Entity
+687,Mission Khanid Frigate,Entity
+688,Mission Khanid Destroyer,Entity
+689,Mission Khanid Cruiser,Entity
+690,Mission Khanid Battlecruiser,Entity
+691,Mission Khanid Battleship,Entity
+692,Mission Khanid Other,Entity
+693,Mission CONCORD Frigate,Entity
+694,Mission CONCORD Destroyer,Entity
+695,Mission CONCORD Cruiser,Entity
+696,Mission CONCORD Battlecruiser,Entity
+697,Mission CONCORD Battleship,Entity
+698,Mission CONCORD Other,Entity
+699,Mission Mordu Frigate,Entity
+700,Mission Mordu Destroyer,Entity
+701,Mission Mordu Cruiser,Entity
+702,Mission Mordu Battlecruiser,Entity
+703,Mission Mordu Battleship,Entity
+704,Mission Mordu Other,Entity
+705,Mission Minmatar Republic Cruiser,Entity
+706,Mission Minmatar Republic Battleship,Entity
+707,Jump Portal Array,Structure
+709,Scanner Array,Structure
+710,Logistics Array,Structure
+711,Harvestable Cloud,Celestial
+712,Biochemical Material,Material
+715,Destructible Agents In Space,Entity
+716,Data Interfaces,Commodity
+718,Booster Blueprints,Blueprint
+721,Temp,Implant
+722,Advanced Hybrid Ammo Blueprint,Blueprint
+723,Tractor Beam Blueprint,Blueprint
+724,Implant Blueprints,Blueprint
+725,Advanced Projectile Ammo Blueprint,Blueprint
+726,Advanced Frequency Crystal Blueprint,Blueprint
+727,Mining Crystal Blueprint,Blueprint
+728,Decryptors - Amarr,Decryptors
+729,Decryptors - Minmatar,Decryptors
+730,Decryptors - Gallente,Decryptors
+731,Decryptors - Caldari,Decryptors
+732,Decryptors - Sleepers,Commodity
+733,Decryptors - Yan Jung,Commodity
+734,Decryptors - Takmahl,Commodity
+735,Decryptors - Talocan,Commodity
+737,Gas Cloud Harvester,Module
+738,Cyber Armor,Implant
+739,Cyber Drones,Implant
+740,Cyber Electronics,Implant
+741,Cyber Engineering,Implant
+742,Cyber Gunnery,Implant
+743,Cyber Industry,Implant
+744,Cyber Leadership,Implant
+745,Cyber Learning,Implant
+746,Cyber Missile,Implant
+747,Cyber Navigation,Implant
+748,Cyber Science,Implant
+749,Cyber Shields,Implant
+750,Cyber Social,Implant
+751,Cyber Trade,Implant
+753,ECM Enhancer,Module
+754,Salvaged Materials,Material
+755,Asteroid Rogue Drone BattleCruiser,Entity
+756,Asteroid Rogue Drone Battleship,Entity
+757,Asteroid Rogue Drone Cruiser,Entity
+758,Asteroid Rogue Drone Destroyer,Entity
+759,Asteroid Rogue Drone Frigate,Entity
+760,Asteroid Rogue Drone Hauler,Entity
+761,Asteroid Rogue Drone Swarm,Entity
+762,Inertia Stabilizer,Module
+763,Nanofiber Internal Structure,Module
+764,Overdrive Injector System,Module
+765,Expanded Cargohold,Module
+766,Power Diagnostic System,Module
+767,Capacitor Power Relay,Module
+768,Capacitor Flux Coil,Module
+769,Reactor Control Unit,Module
+770,Shield Flux Coil,Module
+771,Missile Launcher Heavy Assault,Module
+772,Assault Missile,Charge
+773,Rig Armor,Module
+774,Rig Shield,Module
+775,Rig Energy Weapon,Module
+776,Rig Hybrid Weapon,Module
+777,Rig Projectile Weapon,Module
+778,Rig Drones,Module
+779,Rig Launcher,Module
+780,Rig Electronics,Module
+781,Rig Energy Grid,Module
+782,Rig Astronautic,Module
+783,Cyber X Specials,Implant
+784,Large Collidable Ship,Entity
+786,Rig Electronics Superiority,Module
+787,Rig Blueprint,Blueprint
+789,Asteroid Angel Cartel Commander Frigate,Entity
+790,Asteroid Angel Cartel Commander Cruiser,Entity
+791,Asteroid Blood Raiders Commander Cruiser,Entity
+792,Asteroid Blood Raiders Commander Frigate,Entity
+793,Asteroid Angel Cartel Commander BattleCruiser,Entity
+794,Asteroid Angel Cartel Commander Destroyer,Entity
+795,Asteroid Blood Raiders Commander BattleCruiser,Entity
+796,Asteroid Blood Raiders Commander Destroyer,Entity
+797,Asteroid Guristas Commander BattleCruiser,Entity
+798,Asteroid Guristas Commander Cruiser,Entity
+799,Asteroid Guristas Commander Destroyer,Entity
+800,Asteroid Guristas Commander Frigate,Entity
+801,Deadspace Rogue Drone BattleCruiser,Entity
+802,Deadspace Rogue Drone Battleship,Entity
+803,Deadspace Rogue Drone Cruiser,Entity
+804,Deadspace Rogue Drone Destroyer,Entity
+805,Deadspace Rogue Drone Frigate,Entity
+806,Deadspace Rogue Drone Swarm,Entity
+807,Asteroid Sansha's Nation Commander BattleCruiser,Entity
+808,Asteroid Sansha's Nation Commander Cruiser,Entity
+809,Asteroid Sansha's Nation Commander Destroyer,Entity
+810,Asteroid Sansha's Nation Commander Frigate,Entity
+811,Asteroid Serpentis Commander BattleCruiser,Entity
+812,Asteroid Serpentis Commander Cruiser,Entity
+813,Asteroid Serpentis Commander Destroyer,Entity
+814,Asteroid Serpentis Commander Frigate,Entity
+815,Clone Vat Bay,Module
+816,Mission Generic Battleships,Entity
+817,Mission Generic Cruisers,Entity
+818,Mission Generic Frigates,Entity
+819,Deadspace Overseer Frigate,Entity
+820,Deadspace Overseer Cruiser,Entity
+821,Deadspace Overseer Battleship,Entity
+822,Mission Thukker Battlecruiser,Entity
+823,Mission Thukker Battleship,Entity
+824,Mission Thukker Cruiser,Entity
+825,Mission Thukker Destroyer,Entity
+826,Mission Thukker Frigate,Entity
+827,Mission Thukker Other,Entity
+828,Mission Generic Battle Cruisers,Entity
+829,Mission Generic Destroyers,Entity
+830,Covert Ops,Ship
+831,Interceptor,Ship
+832,Logistics,Ship
+833,Force Recon Ship,Ship
+834,Stealth Bomber,Ship
+835,Station Upgrade Platform,Celestial
+836,Station Improvement Platform,Celestial
+837,Energy Neutralizing Battery,Structure
+838,Cynosural Generator Array,Structure
+839,Cynosural System Jammer,Structure
+840,Structure Repair Array,Structure
+841,Structures - Control Tower Blueprints,Blueprint
+842,Remote ECM Burst,Module
+843,Asteroid Rogue Drone Commander BattleCruiser,Entity
+844,Asteroid Rogue Drone Commander Battleship,Entity
+845,Asteroid Rogue Drone Commander Cruiser,Entity
+846,Asteroid Rogue Drone Commander Destroyer,Entity
+847,Asteroid Rogue Drone Commander Frigate,Entity
+848,Asteroid Angel Cartel Commander Battleship,Entity
+849,Asteroid Blood Raiders Commander Battleship,Entity
+850,Asteroid Guristas Commander Battleship,Entity
+851,Asteroid Sansha's Nation Commander Battleship,Entity
+852,Asteroid Serpentis Commander Battleship,Entity
+853,Structures - Laser Battery Blueprints,Blueprint
+854,Structures - Projectile Battery Blueprints,Blueprint
+855,Structures - Hybrid Battery Blueprints,Blueprint
+856,Structures - ECM Jamming Array Blueprints,Blueprint
+857,Structures - Warp Scrambling Battery Blueprints,Blueprint
+858,Structures - Stasis Webification Battery Blueprints,Blueprint
+859,Structures - Sensor Dampening Array Blueprints,Blueprint
+860,Structures - Energy Neutralizing Battery Blueprints,Blueprint
+861,Mission Fighter Drone,Entity
+862,Missile Launcher Bomb,Module
+863,Bomb ECM,Charge
+864,Bomb Energy,Charge
+865,Mission Amarr Empire Carrier,Entity
+866,Mission Caldari State Carrier,Entity
+867,Mission Gallente Federation Carrier,Entity
+868,Mission Minmatar Republic Carrier,Entity
+870,Remote Hull Repairer Blueprint,Blueprint
+871,Structures - Missile Battery Blueprints,Blueprint
+872,Outpost Improvements,Accessories
+873,Capital Construction Components,Commodity
+874,Destructible Station Services,Celestial
+875,Mission Faction Transports,Entity
+876,Outpost Upgrades,Accessories
+877,Target Painting Battery,Structure
+878,Cloak Enhancements,Module
+879,Slave Reception,Commodity
+880,Sleeper Components,Commodity
+881,Freedom Programs,Reaction
+882,Enslavement Programs,Reaction
+883,Capital Industrial Ship,Ship
+884,Test Compressed Ore,Commodity
+885,Cosmic Anomaly,Celestial
+886,Rogue Drone Components,Material
+888,Ore Compression Blueprints,Blueprint
+889,Ore Enhancement Blueprints,Blueprint
+890,Ice Compression Blueprints,Blueprint
+891,Structures - Mobile Laboratory Blueprints,Blueprint
+892,Planet Satellites,Charge
+893,Electronic Attack Ship,Ship
+894,Heavy Interdictor,Ship
+896,Rig Security Transponder,Module
+897,Covert Beacon,Celestial
+898,Black Ops,Ship
+899,Warp Disrupt Field Generator,Module
+900,Marauder,Ship
+901,Mining Enhancer,Module
+902,Jump Freighter,Ship
+903,Ancient Compressed Ice,Asteroid
+904,Rig Mining,Module
+905,Covert Cynosural Field Generator,Module
+906,Combat Recon Ship,Ship
+907,Tracking Script,Charge
+908,Warp Disruption Script,Charge
+909,Tracking Disruption Script,Charge
+910,Sensor Booster Script,Charge
+911,Sensor Dampener Script,Charge
+912,Script Blueprint,Blueprint
+913,Advanced Capital Construction Components,Commodity
+914,Advanced Capital Construction Component Blueprints,Blueprint
+915,Capital Construction Blueprints,Blueprint
+916,Nanite Repair Paste,Charge
+917,Data Miner Blueprint,Blueprint
+918,Scan Probe Launcher Blueprint,Blueprint
+920,Effect Beacon,Celestial
+922,Capture Point,Entity
+924,Mission Faction Battleship,Entity
+925,Control Bunker,Entity
+927,Mission Faction Industrials,Entity
+934,Zombie Entities,Entity
+935,Establishment,Interiors
+937,Decorations,Abstract
+941,Industrial Command Ship,Ship
+943,Game Time,Accessories
+944,Capital Industrial Ship Blueprint,Blueprint
+945,Industrial Command Ship Blueprint,Blueprint
+952,Mission Container,Entity
+954,Defensive Systems,Subsystem
+955,Electronic Systems,Subsystem
+956,Offensive Systems,Subsystem
+957,Propulsion Systems,Subsystem
+958,Engineering Systems,Subsystem
+959,Deadspace Sleeper Sleepless Sentinel,Entity
+960,Deadspace Sleeper Awakened Sentinel,Entity
+961,Deadspace Sleeper Emergent Sentinel,Entity
+963,Strategic Cruiser,Ship
+964,Hybrid Tech Components,Commodity
+965,Hybrid Component Blueprints,Blueprint
+966,Ancient Salvage,Material
+967,Wormhole Minerals,Material
+971,Sleeper Propulsion Relics,Ancient Relics
+972,Obsolete Probes,Charge
+973,Subsystem Blueprints,Blueprint
+974,Hybrid Polymers,Material
+976,Melted Snowballs,Charge
+977,Hybrid Reactions,Reaction
+979,Decryptors - Hybrid,Decryptors
+982,Deadspace Sleeper Sleepless Defender,Entity
+983,Deadspace Sleeper Sleepless Patroller,Entity
+984,Deadspace Sleeper Awakened Defender,Entity
+985,Deadspace Sleeper Awakened Patroller,Entity
+986,Deadspace Sleeper Emergent Defender,Entity
+987,Deadspace Sleeper Emergent Patroller,Entity
+988,Wormhole,Celestial
+989,Subsystems,Skill
+990,Sleeper Electronics Relics,Ancient Relics
+991,Sleeper Offensive Relics,Ancient Relics
+992,Sleeper Engineering Relics,Ancient Relics
+993,Sleeper Defensive Relics,Ancient Relics
+995,Secondary Sun,Celestial
+996,Strategic Cruiser Blueprints,Blueprint
+997,Sleeper Hull Relics,Ancient Relics
+1003,Territorial Claim Units,Sovereignty Structures
+1004,Defense Bunkers,Sovereignty Structures
+1005,Sovereignty Blockade Units,Sovereignty Structures
+1006,Mission Faction Cruiser,Entity
+1007,Mission Faction Frigate,Entity
+1010,Compact Citadel Torpedo,Charge
+1012,Infrastructure Hubs,Sovereignty Structures
+1013,Supercarrier Blueprints,Blueprint
+1016,Strategic Upgrades,Infrastructure Upgrades
+1019,Citadel Cruise,Charge
+1020,Industrial Upgrades,Infrastructure Upgrades
+1021,Military Upgrades,Infrastructure Upgrades
+1022,Prototype Exploration Ship,Ship
+1023,Fighter Bomber,Drone
+1025,Planetary Customs Offices,Planetary Interaction
+1026,Extractors,Planetary Interaction
+1027,Command Centers,Planetary Interaction
+1028,Processors,Planetary Interaction
+1029,Storage Facilities,Planetary Interaction
+1030,Spaceports,Planetary Interaction
+1031,Planetary Resources,Commodity
+1032,Planet Solid,Planetary Resources
+1033,Planet Liquid-Gas,Planetary Resources
+1034,Refined Commodities,Planetary Commodities
+1035,Planet Organic,Planetary Resources
+1036,Planetary Links,Planetary Interaction
+1040,Specialized Commodities,Planetary Commodities
+1041,Advanced Commodities,Planetary Commodities
+1042,Basic Commodities,Planetary Commodities
+1044,Planet Management,Skill
+1045,Sovereignty Structure Blueprint,Blueprint
+1046,Nanite Repair Paste Blueprint,Blueprint
+1048,Structure Blueprint,Blueprint
+1051,Incursion Sansha's Nation Industrial,Entity
+1052,Incursion Sansha's Nation Capital,Entity
+1053,Incursion Sansha's Nation Frigate,Entity
+1054,Incursion Sansha's Nation Cruiser,Entity
+1056,Incursion Sansha's Nation Battleship,Entity
+1063,Extractor Control Units,Planetary Interaction

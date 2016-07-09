@@ -19,7 +19,6 @@ MongoClient.connect(url, function(err, db) {
         }
 
         var objects = [];
-        console.log(data);
 
         var lines = data.split('\n');
         lines.forEach(line => {
