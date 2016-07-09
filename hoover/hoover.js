@@ -10,6 +10,7 @@ var MongoClient = require('mongodb').MongoClient
 var url = config.mongo.url;
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
+    console.log('connected');
 
     var items = {};
     var itemCollection = db.collection('items');

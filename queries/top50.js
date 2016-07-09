@@ -12,9 +12,11 @@ var program = require('commander');
 
 program
     .version("0.0.1")
-    .option('-p, --peppers', 'Add peppers')
     .option('-g, --groups <groups>', 'Inventory Group(s) to limit the search to', list)
     .option('-l, --limit <number>', 'Maximum number of results to be returned', parseInt)
+    .option('-s, --sort <number>', 'Sort direction (default descending)', parseInt)
+    .option('-f, --from <number>', 'Include only mails from (epoch ts)', parseInt)
+    .option('-t, --to <number>', 'Include only mails to (epoch ts)', parseInt)
     .parse(process.argv);
 
 console.log(program.groups);
@@ -24,18 +26,18 @@ function list(val) {
     return val.split(',');
 }
 
-
-MongoClient.connect(url, function(err, db) {
-    assert.equal(null, err);
-
-});
+var start = new Date().getTime();
 
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
 
     var killmails = db.collection('killmails');
     killmails.aggregate([
-        {$match: {"solarSystem.id": {$in: systems}}},
+        {$match: {
+            "solarSystem.id": {$in: systems},
+            killTime: {$gte: program.from || 0},
+            killTime: {$lte: program.to || new Date().getTime()}
+        }},
         {$unwind: "$victim.items"},
         {$project: {
             itemId: "$victim.items.itemType.id",
@@ -54,10 +56,24 @@ MongoClient.connect(url, function(err, db) {
             name: {$first: "$name"},
             amount: {$sum: "$sum"}}
         },
-        {$sort: {amount: -1}},
-        {$limit: 50}
+        {$sort: {amount: program.sort || -1}},
+        {$limit: program.limit}
     ], res => {
+        var meta = {
+            queryStart: start,
+            queryCompletion: new Date().getTime(),
+            groups: program.groups,
+            limit: program.limit,
+            sort: program.sort,
+            to: program.to,
+            from: program.from,
+            systems: systems
+        };
 
+        var output = {
+            meta: meta,
+            results: res
+        };
 
 
     });
