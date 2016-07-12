@@ -33,8 +33,22 @@ var start = new Date().getTime();
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
 
+    var groups = db.collection('groups');
     var killmails = db.collection('killmails');
-    killmails.aggregate([
+
+    groups.find({categoryName: {$in: program.groups}}).toArray((err, res) => {
+        var groupIds = [];
+        res.forEach(result => {
+            groupIds.push(result.groupId);
+        });
+        parseItems(killmails, groupIds);
+    });
+
+});
+
+
+function parseItems(collection, groupIds){
+    collection.aggregate([
         {$match: {
             "solarSystem.id": {$in: systems},
             killTime: {$gte: program.from || 0},
@@ -43,6 +57,7 @@ MongoClient.connect(url, function(err, db) {
         {$unwind: "$victim.items"},
         {$project: {
             itemId: "$victim.items.itemType.id",
+            groupId: "$victim.items.groupId",
             name: "$victim.items.itemType.name",
             dropped: { $ifNull: [ "$victim.items.quantityDropped", 0]},
             destroyed: { $ifNull: [ "$victim.items.quantityDestroyed", 0]}}
@@ -50,17 +65,20 @@ MongoClient.connect(url, function(err, db) {
         {$project: {
             _id: 1,
             itemId: 1,
-            name:1,
+            name: 1,
+            groupId: 1,
             sum: {$add: ["$dropped", "$destroyed"]}}
         },
         {$group: {
             _id: "$itemId",
+            groupId: "$groupId",
             name: {$first: "$name"},
             amount: {$sum: "$sum"}}
         },
+        {$match: {groupId: {$in: "$groupId"}}},
         {$sort: {amount: program.sort || -1}},
-        {$limit: program.limit}
-    ], res => {
+        {$limit: program.limit }
+    ], (err, res) => {
         var meta = {
             queryStart: start,
             queryCompletion: new Date().getTime(),
@@ -78,9 +96,8 @@ MongoClient.connect(url, function(err, db) {
         };
 
         jsonfile.writeFile('queryResults-'+ new Date().getTime() +'.json', output, function (err) {
-            console.error(err)
+            process.exit();
         });
 
     });
-
-});
+}

@@ -30,6 +30,8 @@ MongoClient.connect(url, function(err, db) {
 
         var groups = db.collection('groups');
         groups.drop();
-        groups.insertMany(objects);
+        groups.insertMany(objects, function(err, res){
+            process.exit();
+        });
     });
 });

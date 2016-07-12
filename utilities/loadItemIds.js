@@ -32,6 +32,8 @@ MongoClient.connect(url, function(err, db) {
 
         var items = db.collection('items');
         items.drop();
-        items.insertMany(objects);
+        items.insertMany(objects, function(err, res){
+            process.exit();
+        });
     });
 });
