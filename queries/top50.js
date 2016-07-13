@@ -5,12 +5,10 @@
 var MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
 var url = 'mongodb://localhost:27017/tyche';
-
 var jsonfile = require('jsonfile');
+var program = require('commander');
 
 var systems = [30002050, 30002051, 30002052, 30002055, 30002056, 30002057, 30002058, 30002059, 30002060, 30002061, 30002062, 30002063, 30002064, 30002065, 30002066, 30002067, 30002073, 30002074, 30002076, 30002077, 30002078, 30002079, 30002080, 30002081, 30002082, 30002083, 30002084, 30002085, 30002086, 30002087, 30002088, 30002089, 30002090, 30002091, 30002092, 30002093, 30002094, 30002095, 30002096, 30002097, 30002098, 30002099, 30002100, 30002101, 30002102, 30003424, 30003425, 30003426, 30003444, 30003446, 30003460, 30003461, 30003463, 30003465, 30003466, 30003467, 30003470, 30003471];
-
-var program = require('commander');
 
 program
     .version("0.0.1")
@@ -19,10 +17,8 @@ program
     .option('-s, --sort <number>', 'Sort direction (default descending)', parseInt)
     .option('-f, --from <number>', 'Include only mails from (epoch ts)', parseInt)
     .option('-t, --to <number>', 'Include only mails to (epoch ts)', parseInt)
+    .option('-o --output <path>', 'Output folder path')
     .parse(process.argv);
-
-console.log(program.groups);
-console.log(program.limit);
 
 function list(val) {
     return val.split(',');
@@ -30,8 +26,11 @@ function list(val) {
 
 var start = new Date().getTime();
 
-MongoClient.connect(url, function(err, db) {
-    assert.equal(null, err);
+MongoClient.connect(url, (err, db) => {
+    if(err != null){
+        console.log('There was an error while connecting to the database: ', err);
+        process.exit();
+    }
 
     var groups = db.collection('groups');
     var killmails = db.collection('killmails');
@@ -43,7 +42,6 @@ MongoClient.connect(url, function(err, db) {
         });
         parseItems(killmails, groupIds);
     });
-
 });
 
 
@@ -71,11 +69,11 @@ function parseItems(collection, groupIds){
         },
         {$group: {
             _id: "$itemId",
-            groupId: "$groupId",
+            groupId: {$first: "$groupId"},
             name: {$first: "$name"},
             amount: {$sum: "$sum"}}
         },
-        {$match: {groupId: {$in: "$groupId"}}},
+        {$match: {groupId: {$in: groupIds}}},
         {$sort: {amount: program.sort || -1}},
         {$limit: program.limit }
     ], (err, res) => {
@@ -95,9 +93,25 @@ function parseItems(collection, groupIds){
             results: res
         };
 
-        jsonfile.writeFile('queryResults-'+ new Date().getTime() +'.json', output, function (err) {
+        let path = program.output + 'results-'+ toSensibleTimestamp(new Date()) +'.json';
+        jsonfile.writeFile(path, output, err => {
+            if(err != null){
+                console.log('An error occurred while writing to file ', err);
+            }
             process.exit();
         });
-
     });
+}
+
+function toSensibleTimestamp(date){
+    return date.getFullYear() + '' +
+    pad(date.getUTCMonth() + 1) +
+    pad(date.getDate()) + 'T' +
+    pad(date.getHours()) + ':' +
+    pad(date.getMinutes()) + ':' +
+    pad(date.getSeconds());
+}
+
+function pad(num){
+    return num < 10 ? '0' + num : num;
 }
