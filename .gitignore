@@ -1,2 +1,6 @@
 node_modules/
 .idea
+scala/project
+scala/.idea
+scala/project
+scala/target

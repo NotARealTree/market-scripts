@@ -21,9 +21,6 @@ program
     .option('-t, --to <number>', 'Include only mails to (epoch ts)', parseInt)
     .parse(process.argv);
 
-console.log(program.groups);
-console.log(program.limit);
-
 function list(val) {
     return val.split(',');
 }
@@ -71,13 +68,13 @@ function parseItems(collection, groupIds){
         },
         {$group: {
             _id: "$itemId",
-            groupId: "$groupId",
+            groupId: {$first: "$groupId"},
             name: {$first: "$name"},
             amount: {$sum: "$sum"}}
         },
-        {$match: {groupId: {$in: "$groupId"}}},
+        {$match: {groupId: {$in: groupIds}}},
         {$sort: {amount: program.sort || -1}},
-        {$limit: program.limit }
+        {$limit: program.limit}
     ], (err, res) => {
         var meta = {
             queryStart: start,
