@@ -23,8 +23,8 @@ MongoClient.connect(url, function(err, db) {
             var splits = line.replace('\r', '').split(',');
             objects.push({
                 groupId: splits[0],
-                groupName: splits[1].toLowerCase(),
-                categoryName: splits[2].toLowerCase()
+                categoryId: splits[1],
+                groupName: splits[2].toLowerCase()
             });
         });
 

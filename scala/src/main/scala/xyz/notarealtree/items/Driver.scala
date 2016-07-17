@@ -6,6 +6,5 @@ package xyz.notarealtree.items
 object Driver {
     def main(args: Array[String]): Unit = {
         new Processor().processSomeMails()
-        //f.onSuccess({case yo => print(yo)})
     }
 }

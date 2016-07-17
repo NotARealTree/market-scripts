@@ -12,11 +12,14 @@ class Processor {
     private val cargo : List[Int] = List(5)
     private var counts : Map[String, Int] = Map()
     private var objects : Map[String, Killmail] = Map()
+    private val randomNameGenerator: RandomNameGenerator = new RandomNameGenerator()
 
     def processSomeMails() : Unit = {
-        val mongodb : MongoDB = new MongoDB("localhost:27017", "tyche", "killmails", "groups")
+        val mongodb : MongoDB = new MongoDB("localhost:27017", "tyche", "killmails", "groups", "items")
         val mails = mongodb.retrieveMails()
+        val items = mongodb.getItems()
         fillMaps(mails)
+        convertFits(items)
     }
 
     def fillMaps(killmails: List[Killmail]): Unit = {
@@ -30,10 +33,33 @@ class Processor {
                 counts = counts + (serialized -> 1)
             }
         })
+    }
+
+    def convertFits(items: Map[Long, String]): Unit = {
         val sorted = counts.toList.sortBy(_._2).reverse
-        for(i <- 0 to 5){
-            print(sorted(i)_2)
-            println(objects(sorted(i)_1))
+        print(convertFit(objects(sorted(5)_1), items))
+    }
+
+    def convertFit(killmail: Killmail, items: Map[Long, String]): String = {
+        println(killmail)
+        val sb = StringBuilder.newBuilder
+        sb.append("[" + items(killmail.ship) + ", " + randomNameGenerator.generateRandomName() + "]\n\n")
+
+        concat(killmail.lows, sb, items)
+        concat(killmail.mids, sb, items)
+        concat(killmail.highs, sb, items)
+        concat(killmail.rigs, sb, items)
+        concat(killmail.drones, sb, items)
+
+        sb.toString()
+    }
+
+    def concat(ls: List[Int], sb: StringBuilder, items: Map[Long, String]): Unit = {
+        if(ls.nonEmpty){
+            ls.foreach(slot => {
+                sb.append(items(slot) + "\n")
+            })
+            sb.append("\n")
         }
     }
 }

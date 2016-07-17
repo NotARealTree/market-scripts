@@ -9,11 +9,12 @@ import scala.reflect.ClassTag
 /**
   * Created by Francis on 16/07/2016.
   */
-class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String, val gpCollection: String) {
+class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String, val gpCollection: String, val itCollection: String) {
     private val mongoClient: MongoClient = MongoClient(mongoUrl)
     private val database = mongoClient(dbName)
     private val killmailCollection = database(kmCollection)
     private val groupCollection = database(gpCollection)
+    private val itemCollection = database(itCollection)
     private val rigs : List[Int] = List.range(92, 95)
     private val highs : List[Int] = List.range(27, 35)
     private val mids : List[Int] = List.range(19, 27)
@@ -35,7 +36,12 @@ class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String
 
     def loadGroups() : List[Int] = {
         var result = List[Int]()
-        val query = MongoDBObject("categoryName" -> "module")
+        val query = MongoDBObject(
+            "$or" -> List(
+                MongoDBObject("categoryId" -> "7"),
+                MongoDBObject("categoryId" -> "18")
+            )
+        )
         val allGroups = groupCollection.find(query).toArray
         for(group <- allGroups){
             val groupId = get[String](List("groupId"), group).toInt
@@ -83,6 +89,8 @@ class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String
             val id = get[Int](List("itemType", "id"), item)
             val groupId = get[String](List("groupId"), item).toInt
 
+            // TODO: This doesnt include drones currently T_T
+
             if(rigs.contains(flag)){
                 result = result + (RIGS -> (result(RIGS) :+ id))
             }else if(lows.contains(flag) && groups.contains(groupId)){
@@ -94,6 +102,18 @@ class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String
             }else if(drones.contains(flag) && groups.contains(groupId)){
                 result = result + (DRONES -> (result(DRONES) :+ id))
             }
+        }
+        result
+    }
+
+    def getItems(): Map[Long, String] = {
+        val allItems = itemCollection.find().toArray
+        var result = Map[Long, String]()
+
+        for(item <- allItems){
+            val itemId = get[String](List("typeId"), item).toLong
+            val itemName = get[String](List("typeName"), item)
+            result = result + (itemId -> itemName)
         }
         result
     }
