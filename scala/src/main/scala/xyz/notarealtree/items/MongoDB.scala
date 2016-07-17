@@ -60,50 +60,50 @@ class MongoDB(val mongoUrl: String, val dbName: String, val kmCollection: String
         for(item <- array){
             val killmail = new Killmail()
             val items = get[BasicDBList](List("victim", "items"), item)
-            val slots = getSlots(items, groups)
 
             killmail.ship = get[Int](List("victim", "shipType", "id"), item)
-            killmail.drones = slots(DRONES)
-            killmail.lows = slots(LOWS)
-            killmail.mids = slots(MIDS)
-            killmail.highs = slots(HIGHS)
-            killmail.rigs = slots(RIGS)
+
+            val (l, m, h, r, d) = getSlots(items, groups)
+
+            killmail.lows = l
+            killmail.mids = m
+            killmail.highs = h
+            killmail.rigs = r
+            killmail.drones = d
 
             result = result :+ killmail
         }
         result
     }
 
-    def getSlots(items: BasicDBList, groups: List[Int]) : Map[String, List[Int]] = {
-        var result = Map[String, List[Int]](
-            LOWS -> List(),
-            MIDS -> List(),
-            HIGHS -> List(),
-            RIGS -> List(),
-            DRONES -> List()
-        )
+    def getSlots(items: BasicDBList, groups: List[Int]) : (List[Int], List[Int], List[Int], List[Int], List[(Int, Int)]) = {
+        var lowslots = List[Int]()
+        var midslots = List[Int]()
+        var highslots = List[Int]()
+        var rigslots = List[Int]()
+        var droneTuples = List[(Int, Int)]()
 
         for(i <- 0 until items.size()){
             val item = items.get(i).asInstanceOf[Imports.DBObject]
             val flag = get[Int](List("flag"), item)
             val id = get[Int](List("itemType", "id"), item)
             val groupId = get[String](List("groupId"), item).toInt
-
-            // TODO: This doesnt include drones currently T_T
-
             if(rigs.contains(flag)){
-                result = result + (RIGS -> (result(RIGS) :+ id))
+                rigslots = rigslots :+ id
             }else if(lows.contains(flag) && groups.contains(groupId)){
-                result = result + (LOWS -> (result(LOWS) :+ id))
+                lowslots = lowslots :+ id
             }else if(mids.contains(flag) && groups.contains(groupId)){
-                result = result + (MIDS -> (result(MIDS) :+ id))
+                midslots = midslots :+ id
             }else if(highs.contains(flag) && groups.contains(groupId)){
-                result = result + (HIGHS -> (result(HIGHS) :+ id))
+                highslots = highslots :+ id
             }else if(drones.contains(flag) && groups.contains(groupId)){
-                result = result + (DRONES -> (result(DRONES) :+ id))
+                val qty = get[Int](List("quantityDropped"), item) + get[Int](List("quantityDestroyed"), item)
+                val tuple = (id, qty)
+                droneTuples = droneTuples :+ tuple
             }
         }
-        result
+
+        (lowslots, midslots, highslots, rigslots, droneTuples)
     }
 
     def getItems(): Map[Long, String] = {

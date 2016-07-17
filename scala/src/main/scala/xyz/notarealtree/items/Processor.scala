@@ -37,7 +37,11 @@ class Processor {
 
     def convertFits(items: Map[Long, String]): Unit = {
         val sorted = counts.toList.sortBy(_._2).reverse
-        print(convertFit(objects(sorted(5)_1), items))
+        print(convertFit(objects(sorted(21)_1), items))
+        for(va <- 22 to 28){
+            println(convertFit(objects(sorted(va)_1), items))
+        }
+
     }
 
     def convertFit(killmail: Killmail, items: Map[Long, String]): String = {
@@ -49,7 +53,7 @@ class Processor {
         concat(killmail.mids, sb, items)
         concat(killmail.highs, sb, items)
         concat(killmail.rigs, sb, items)
-        concat(killmail.drones, sb, items)
+        concatDrones(killmail.drones, sb, items)
 
         sb.toString()
     }
@@ -58,6 +62,15 @@ class Processor {
         if(ls.nonEmpty){
             ls.foreach(slot => {
                 sb.append(items(slot) + "\n")
+            })
+            sb.append("\n")
+        }
+    }
+
+    def concatDrones(ls: List[(Int, Int)], sb: StringBuilder, items: Map[Long, String]): Unit = {
+        if(ls.nonEmpty){
+            ls.foreach(slot => {
+                sb.append(items(slot _1) + " x" + (slot _2) + "\n")
             })
             sb.append("\n")
         }
