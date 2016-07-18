@@ -5,7 +5,7 @@
 The purpose of this project is to experiment with data collected from [zkillboard](https://zkillboard.com) in a variety of different
 languages and systems, currently **Scala** and **NodeJS**. Menagerie is in fact my first try at using **Scala**.
 
-![alt text](http://media.marketwire.com/attachments/201004/589216_Hoover_3D_6in.jpg "Hoover Icon")
+![Hoover](http://media.marketwire.com/attachments/201004/589216_Hoover_3D_6in.jpg "Hoover Icon")
 ## Hoover
 
 **Hoover** is intended to be a standalone component of the system.
@@ -14,6 +14,7 @@ It is separate in order to allow changing of other system components while keepi
 
 **Hoover** is intended to be run using foreverJS.
 
+![alt text](http://lowres-picturecabinet.com.s3-eu-west-1.amazonaws.com/29/main/7/143155.jpg "Hoover Image")
 ## Menagerie
 
 **Menagerie** is a component that uses simple serialization on killmails to find the most popular (read: most lost) fitting per ship
