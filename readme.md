@@ -16,3 +16,7 @@ This project is MIT Licensed, the license can be found [here](LICENSE)
 ## Commands
 
 hoover `forever start hoover.js -l forever.log -o hoover.log -e hoover_err.log --minUptime 10000`
+
+## Top Spot for silliest generated name
+
+`Scientifically offensive Giraffe`

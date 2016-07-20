@@ -13,13 +13,13 @@ class Processor {
     private var counts : Map[String, Int] = Map()
     private var objects : Map[String, Killmail] = Map()
     private val randomNameGenerator: RandomNameGenerator = new RandomNameGenerator()
+    val mongodb : MongoDB = new MongoDB("localhost:27017", "tyche", "killmails", "groups", "items")
 
-    def processSomeMails() : Unit = {
-        val mongodb : MongoDB = new MongoDB("localhost:27017", "tyche", "killmails", "groups", "items")
+    def processSomeMails(id: Int) : String = {
         val mails = mongodb.retrieveMails()
         val items = mongodb.getItems()
         fillMaps(mails)
-        convertFits(items)
+        convertFits(items)(id)
     }
 
     def fillMaps(killmails: List[Killmail]): Unit = {
@@ -35,19 +35,18 @@ class Processor {
         })
     }
 
-    def convertFits(items: Map[Long, String]): Unit = {
+    def convertFits(items: Map[Long, String]): List[String] = {
         val sorted = counts.toList.sortBy(_._2).reverse
-        print(convertFit(objects(sorted(21)_1), items))
-        for(va <- 22 to 28){
-            println(convertFit(objects(sorted(va)_1), items))
+        var fits: List[String] = List[String]()
+        for(i <- 1 to 1){
+            fits = fits :+ convertFit(objects(sorted(i)_1), items)
         }
-
+        fits
     }
 
     def convertFit(killmail: Killmail, items: Map[Long, String]): String = {
-        println(killmail)
         val sb = StringBuilder.newBuilder
-        sb.append("[" + items(killmail.ship) + ", " + randomNameGenerator.generateRandomName() + "]\n\n")
+        sb.append("[" + items(killmail.ship) + ", " + randomNameGenerator.generateRandomName() + "]\\n\\n")
 
         concat(killmail.lows, sb, items)
         concat(killmail.mids, sb, items)
@@ -61,18 +60,18 @@ class Processor {
     def concat(ls: List[Int], sb: StringBuilder, items: Map[Long, String]): Unit = {
         if(ls.nonEmpty){
             ls.foreach(slot => {
-                sb.append(items(slot) + "\n")
+                sb.append(items(slot) + "\\n")
             })
-            sb.append("\n")
+            sb.append("\\n")
         }
     }
 
     def concatDrones(ls: List[(Int, Int)], sb: StringBuilder, items: Map[Long, String]): Unit = {
         if(ls.nonEmpty){
             ls.foreach(slot => {
-                sb.append(items(slot _1) + " x" + (slot _2) + "\n")
+                sb.append(items(slot _1) + " x" + (slot _2) + "\\n")
             })
-            sb.append("\n")
+            sb.append("\\n")
         }
     }
 }
