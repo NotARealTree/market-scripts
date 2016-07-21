@@ -25,7 +25,6 @@ class Killmail {
         ship + join(highs) + join(mids) + join(lows) + join(rigs) + join(drones.map(x => x _1))
     }
 
-    //TODO: This should be pattern matching really
     def join(ls: List[Int]) : String = {
         if(ls.length > 1){
             ls.head + join(ls.tail)
